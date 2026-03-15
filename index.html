@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loving Homes - إيواء الكلاب</title>
+<link rel="stylesheet" href="../css/styles.css">
+
+<style>
+
+.hero-image{
+position: relative;
+width: 100%;
+}
+
+.hero-image img{
+width: 100%;
+display: block;
+}
+
+.image-text{
+position: absolute;
+bottom: 15px;
+right: 15px;
+}
+
+.image-text a{
+background-color: gold;
+color: black;
+padding: 10px 20px;
+text-decoration: none;
+font-weight: bold;
+border-radius: 6px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="top-bar">
+<div class="top-controls">
+<button class="lang-btn toggle-lang-btn" onclick="toggleLanguage()">عربي</button>
+<button class="font-btn" onclick="increaseFont()">+</button>
+<button class="font-btn" onclick="decreaseFont()">-</button>
+</div>
+
+<div class="logo">Loving Homes</div>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+<a href="pag2.html" data-ar="الخدمات" data-en="Services">الخدمات</a>
+      <a href="pag3.html" data-ar="الصور" data-en="Photos">الصور</a>
+      <a href="pag7.html" data-ar="الحزم" data-en="Packages">الحزم</a>
+      <a href="pag4.html" data-ar="الحجز" data-en="Booking">الحجز</a>
+<a href="pag5.html" data-ar="من نحن" data-en="About Us">من نحن</a>
+<a href="pag6.html" data-ar="التواصل" data-en="Contact">التواصل</a>
+</div>
+
+<div class="links">
+      <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+<a href="pag2.html" data-ar="الخدمات" data-en="Services">الخدمات</a>
+      <a href="pag3.html" data-ar="الصور" data-en="Photos">الصور</a>
+      <a href="pag7.html" data-ar="الحزم" data-en="Packages">الحزم</a>
+      <a href="pag4.html" data-ar="الحجز" data-en="Booking">الحجز</a>
+<a href="pag5.html" data-ar="من نحن" data-en="About Us">من نحن</a>
+<a href="pag6.html" data-ar="التواصل" data-en="Contact">التواصل</a>
+</div>
+</div>
+
+<div class="container" id="main-content">
+
+<h1 id="title" data-ar="فندق إيواء الكلاب" data-en="Dog Boarding Hotel">
+فندق إيواء الكلاب
+</h1>
+
+<p class="subtitle" id="subtitle"
+data-ar="راحة وأمان لكلبك في مكان واحد"
+data-en="Comfort and safety for your dog in one place">
+راحة وأمان لكلبك في مكان واحد
+</p>
+
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800" alt="كلب سعيد في المركز">
+
+<p class="hero-text bilingual-btn">
+<span class="ar-btn" data-lang="ar">احجز الآن</span>
+<span class="en-btn" data-lang="en">Book Now</span>
+<a href="pag4.html" class="inline-book-btn">احجز الآن</a>
+</p>
+
+</div>
+
+</div>
+
+<script src="java/language.js"></script>
+
+<script>
+
+let size = 16;
+
+function toggleMenu(){
+document.getElementById("mobileMenu").classList.toggle("active");
+}
+
+function increaseFont(){
+size += 2;
+document.getElementById("main-content").style.fontSize = size + "px";
+}
+
+function decreaseFont(){
+if(size > 10){
+size -= 2;
+document.getElementById("main-content").style.fontSize = size + "px";
+}
+}
+
+</script>
+
+</body>
+</html>

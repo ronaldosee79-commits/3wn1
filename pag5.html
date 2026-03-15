@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن - Loving Homes</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Tahoma, sans-serif; background: #f5f7fa; color: #2c3e50; }
+    .top-bar { background: #d4a84b; padding: 15px; display: flex; justify-content: center; align-items: center; flex-direction: column; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: relative; }
+    .top-controls { position: absolute; top: 10px; left: 10px; display: flex; gap: 5px; }
+    .logo { font-size: 20px; color: #ffffff; font-weight: bold; margin-bottom: 10px; }
+    .links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .links a { color: #5a6c7d; text-decoration: none; padding: 8px 12px; background: #e8eef4; border-radius: 20px; border: 1px solid #d4dde6; font-size: 14px; }
+    .font-btn { padding: 5px 10px; background: #ffffff; color: #d4a84b; border: none; border-radius: 10px; cursor: pointer; font-size: 12px; font-weight: bold; }
+    .font-btn:hover { background: #f0f0f0; }
+    .lang-btn { padding: 5px 10px; background: #ffffff; color: #d4a84b; border: none; border-radius: 10px; cursor: pointer; font-size: 12px; font-weight: bold; }
+    .lang-btn:hover { background: #f0f0f0; }
+    .menu-btn { display: none; padding: 8px 15px; background: #ffffff; color: #d4a84b; border: none; border-radius: 10px; cursor: pointer; font-size: 16px; font-weight: bold; }
+    .mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #d4a84b; padding: 10px; flex-direction: column; gap: 10px; }
+    .mobile-menu a { color: #ffffff; text-decoration: none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 10px; text-align: center; }
+    .container { max-width: 700px; margin: 40px auto; padding: 40px; background: #ffffff; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    h1 { text-align: center; color: #d4a84b; margin-bottom: 10px; }
+    .intro { text-align: center; color: #7f8c8d; font-size: 18px; line-height: 1.8; margin-bottom: 30px; }
+    .mission { padding: 25px; margin-bottom: 20px; }
+    .mission h2 { color: #2c3e50; margin-top: 0; }
+    .mission p { color: #5a6c7d; line-height: 1.7; }
+    .why-us { padding: 25px; margin-bottom: 20px; }
+    .why-us h2 { color: #d4a84b; margin-top: 0; }
+    .why-us p { color: #5a6c7d; line-height: 1.7; }
+    .features { display: flex; gap: 15px; margin-top: 15px; }
+    .feature { flex: 1; text-align: center; padding: 15px; background: #f5f7fa; border-radius: 10px; }
+    .feature h3 { color: #d4a84b; margin: 10px 0; }
+    .feature p { font-size: 14px; color: #5a6c7d; }
+    .nav-buttons { display: flex; justify-content: space-between; margin-top: 30px; }
+    .nav-buttons a { padding: 15px 30px; background: #e8eef4; color: #5a6c7d; text-decoration: none; border-radius: 10px; border: 1px solid #d4dde6; }
+    @media (max-width: 600px) { 
+      .links { display: none; } 
+      .menu-btn { display: block; }
+      .mobile-menu.active { display: flex; }
+      .top-bar { padding: 15px 10px; }
+      .top-controls { top: 5px; left: 5px; gap: 3px; }
+      .font-btn, .lang-btn { padding: 4px 8px; font-size: 11px; }
+      .logo { font-size: 18px; }
+      .container { margin: 20px 10px; padding: 20px 15px; }
+      .nav-buttons { flex-direction: column; gap: 10px; } 
+      .nav-buttons a { text-align: center; }
+      .features { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="top-controls">
+      <button class="lang-btn" onclick="arabic()">العربية</button>
+      <button class="lang-btn" onclick="english()">English</button>
+      <button class="font-btn" onclick="increaseFont()">+</button>
+      <button class="font-btn" onclick="decreaseFont()">-</button>
+    </div>
+    <div class="logo">Loving Homes</div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="pag2.html">الخدمات</a>
+      <a href="pag3.html">الصور</a>
+      <a href="pag4.html">الحجز</a>
+      <a href="pag5.html">من نحن</a>
+      <a href="pag6.html">التواصل</a>
+    </div>
+    <div class="links">
+      <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="pag2.html">الخدمات</a>
+      <a href="pag3.html">الصور</a>
+      <a href="pag4.html">الحجز</a>
+      <a href="pag5.html">من نحن</a>
+      <a href="pag6.html">التواصل</a>
+    </div>
+  </div>
+  <div class="container" id="main-content">
+    <h1 id="title">من نحن</h1>
+    <p class="intro" id="intro">فندق Loving Homes هو فندق كلاب فاخر نوفر أفضل الخدمات لرعاية كلبك بأفضل الأسعار</p>
+    
+    <div class="mission">
+      <h2 id="mission-title">مهمتنا</h2>
+      <p id="mission-desc">نحن نوفر بيئة آمنة ومريحة لكلبك مع خدمات متكاملة تشمل الإقامة الكاملة والحلاقة والمشي اليومي</p>
+    </div>
+    
+    <div class="why-us">
+      <h2 id="why-title">لماذا تختارنا؟</h2>
+      <p id="why-desc">فريق متخصص من المدربين والبيطرين مع مرافق حديثة ومجهزة ورعاية على مدار الساعة</p>
+      <div class="features">
+        <div class="feature">
+          <h3 id="f1-title">ايواء امن</h3>
+          <p id="f1-desc">غرف مريحة وامنة مجهزة لكل أنواع الكلاب</p>
+        </div>
+        <div class="feature">
+          <h3 id="f2-title">طعام صحي</h3>
+          <p id="f2-desc">وجبات متوازنة ومخصصة حسب احتياجات كلبك</p>
+        </div>
+        <div class="feature">
+          <h3 id="f3-title">ترفيه ونشاط</h3>
+          <p id="f3-desc">مشايات يومية وألعاب للحفاظ على نشاط كلبك</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="nav-buttons">
+      <a href="pag4.html" id="back">رجوع</a>
+      <a href="pag6.html" id="next">التالي</a>
+    </div>
+  </div>
+  <script>
+    let size = 16;
+
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("active");
+    }
+
+    function increaseFont() {
+      size += 2;
+      document.getElementById("main-content").style.fontSize = size + "px";
+    }
+
+    function decreaseFont() {
+      if (size > 10) {
+        size -= 2;
+        document.getElementById("main-content").style.fontSize = size + "px";
+      }
+    }
+
+    function arabic(){
+      document.getElementById("title").innerHTML="من نحن";
+      document.getElementById("intro").innerHTML="فندق Loving Homes هو فندق كلاب فاخر نوفر أفضل الخدمات لرعاية كلبك بأفضل الأسعار";
+      document.getElementById("mission-title").innerHTML="مهمتنا";
+      document.getElementById("mission-desc").innerHTML="نحن نوفر بيئة آمنة ومريحة لكلبك مع خدمات متكاملة تشمل الإقامة الكاملة والحلاقة والمشي اليومي";
+      document.getElementById("why-title").innerHTML="لماذا تختارنا؟";
+      document.getElementById("why-desc").innerHTML="فريق متخصص من المدربين والبيطرين مع مرافق حديثة ومجهزة ورعاية على مدار الساعة";
+      document.getElementById("f1-title").innerHTML="ايواء امن";
+      document.getElementById("f1-desc").innerHTML="غرف مريحة وامنة مجهزة لكل أنواع الكلاب";
+      document.getElementById("f2-title").innerHTML="طعام صحي";
+      document.getElementById("f2-desc").innerHTML="وجبات متوازنة ومخصصة حسب احتياجات كلبك";
+      document.getElementById("f3-title").innerHTML="ترفيه ونشاط";
+      document.getElementById("f3-desc").innerHTML="مشايات يومية وألعاب للحفاظ على نشاط كلبك";
+      document.getElementById("back").innerHTML="رجوع";
+      document.getElementById("next").innerHTML="التالي";
+      document.body.dir="rtl";
+    }
+
+    function english(){
+      document.getElementById("title").innerHTML="About Us";
+      document.getElementById("intro").innerHTML="Loving Homes Hotel is a luxury dog hotel providing the best services for your pet at the best prices";
+      document.getElementById("mission-title").innerHTML="Our Mission";
+      document.getElementById("mission-desc").innerHTML="We provide a safe and comfortable environment for your dog with integrated services including full accommodation, grooming, and daily walks";
+      document.getElementById("why-title").innerHTML="Why Choose Us?";
+      document.getElementById("why-desc").innerHTML="A specialized team of trainers and veterinarians with modern facilities and 24-hour care";
+      document.getElementById("f1-title").innerHTML="Safe Boarding";
+      document.getElementById("f1-desc").innerHTML="Comfortable and safe rooms equipped for all dog types";
+      document.getElementById("f2-title").innerHTML="Healthy Food";
+      document.getElementById("f2-desc").innerHTML="Balanced and customized meals according to your dog's needs";
+      document.getElementById("f3-title").innerHTML="Entertainment";
+      document.getElementById("f3-desc").innerHTML="Daily walks and games to keep your dog active";
+      document.getElementById("back").innerHTML="Back";
+      document.getElementById("next").innerHTML="Next";
+      document.body.dir="ltr";
+    }
+  </script>
+</body>
+</html>
+

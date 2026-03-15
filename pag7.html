@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الحزم - Loving Homes</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="top-bar">
+    <div class="top-controls">
+<button class="lang-btn toggle-lang-btn" onclick="toggleLanguage()">عربي</button>
+      <button class="font-btn" onclick="increaseFont()">+</button>
+      <button class="font-btn" onclick="decreaseFont()">-</button>
+    </div>
+    <div class="logo">Loving Homes</div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+<div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="pag2.html" data-ar="الخدمات" data-en="Services">الخدمات</a>
+      <a href="pag3.html" data-ar="الصور" data-en="Photos">الصور</a>
+      <a href="pag7.html" data-ar="الحزم" data-en="Packages">الحزم</a>
+      <a href="pag4.html" data-ar="الحجز" data-en="Booking">الحجز</a>
+      <a href="pag5.html" data-ar="من نحن" data-en="About Us">من نحن</a>
+      <a href="pag6.html" data-ar="التواصل" data-en="Contact">التواصل</a>
+    </div>
+<div class="links">
+      <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="pag2.html" data-ar="الخدمات" data-en="Services">الخدمات</a>
+      <a href="pag3.html" data-ar="الصور" data-en="Photos">الصور</a>
+      <a href="pag7.html" data-ar="الحزم" data-en="Packages">الحزم</a>
+      <a href="pag4.html" data-ar="الحجز" data-en="Booking">الحجز</a>
+      <a href="pag5.html" data-ar="من نحن" data-en="About Us">من نحن</a>
+      <a href="pag6.html" data-ar="التواصل" data-en="Contact">التواصل</a>
+    </div>
+  </div>
+  
+  <div class="container" id="main-content">
+    <h1 id="title" data-ar="الحزم" data-en="Packages">الحزم</h1>    
+    <div class="services-grid" style="grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 40px; align-items: end;">
+
+      <!-- مميزة -->
+      <div class="service-card package-card مميزة">
+        <div class="package-image">
+          <img src="https://iresizer.devops.arabiaweather.com/resize?url=https://adminassets.devops.arabiaweather.com/sites/default/files/siberian-huskies-with-blue-eyes-pictures.jpg&size=850x530&force_webp=1" alt="حزمة مميزة - هاسكي أزرق العيون" loading="lazy" style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
+        </div>
+        <h3>مميزة</h3>
+        <div class="price">400 ريال / يوم</div>
+        <ul class="package-features">
+          <li>جناح VIP مع كاميرا مباشرة</li>
+          <li>طعام عضوي مخصص</li>
+          <li>مشي يومي مع مدرب</li>
+          <li>عناية كاملة يومية</li>
+          <li>تقارير صحية</li>
+          <li>تدريب اختياري</li>
+        </ul>
+        <h3 style="color: #d4a84b; font-size: 28px; text-align: center; margin: 20px 0 10px 0; cursor: pointer; text-decoration: underline; transition: color 0.3s; border: 3px solid #d4a84b; border-radius: 15px; padding: 10px; background: rgba(212,168,75,0.1);" onclick="window.location.href='pag4.html'">احجز الآن</h3>
+      </div>
+
+      <!-- كلاسيكية -->
+      <div class="service-card package-card كلاسيكية">
+        <div class="package-image">
+          <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&fit=crop&crop=center" alt="حزمة كلاسيكية - كلب مرتاح" loading="lazy" style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
+        </div>
+        <h3>كلاسيكية</h3>
+        <div class="price">250 ريال / يوم</div>
+        <ul class="package-features">
+          <li>غرفة مريحة آمنة</li>
+          <li>وجبات متوازنة</li>
+          <li>مشي يومي</li>
+          <li>استحمام أسبوعي</li>
+          <li>رعاية يومية</li>
+        </ul>
+        <h3 style="color: #d4a84b; font-size: 28px; text-align: center; margin: 20px 0 10px 0; cursor: pointer; text-decoration: underline; transition: color 0.3s; border: 3px solid #d4a84b; border-radius: 15px; padding: 10px; background: rgba(212,168,75,0.1);" onclick="window.location.href='pag4.html'">احجز الآن</h3>
+      </div>
+
+      <!-- اليوم -->
+      <div class="service-card package-card اليوم">
+        <div class="package-image">
+          <img src="https://iresizer.devops.arabiaweather.com/resize?url=https://adminassets.devops.arabiaweather.com/sites/default/files/siberian-huskies-with-blue-eyes-pictures.jpg&size=850x530&force_webp=1" alt="حزمة اليوم - هاسكي أزرق العيون" loading="lazy" style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
+        </div>
+        <h3>اليوم</h3>
+        <div class="price">100 ريال / يوم</div>
+        <ul class="package-features">
+          <li>إقامة يومية</li>
+          <li>وجبة واحدة</li>
+          <li>مشي قصير</li>
+          <li>رعاية أساسية</li>
+        </ul>
+        <h3 style="color: #d4a84b; font-size: 28px; text-align: center; margin: 20px 0 10px 0; cursor: pointer; text-decoration: underline; transition: color 0.3s; border: 3px solid #d4a84b; border-radius: 15px; padding: 10px; background: rgba(212,168,75,0.1);" onclick="window.location.href='pag4.html'">احجز الآن</h3>
+      </div>
+
+    </div>
+
+      
+
+  <script src="java/language.js"></script>
+  <script>
+    let size = 16;
+
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("active");
+    }
+
+    function increaseFont() {
+      size += 2;
+      document.getElementById("main-content").style.fontSize = size + "px";
+    }
+
+    function decreaseFont() {
+      if (size > 10) {
+        size -= 2;
+        document.getElementById("main-content").style.fontSize = size + "px";
+      }
+    }
+  </script>
+
+  <style>
+    .package-card {
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 650px;
+      display: flex;
+      flex-direction: column;
+    }
+    .package-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .package-card .price { 
+      background: #d4a84b; 
+      color: white; 
+    }
+    .package-image {
+      height: 350px;
+      overflow: hidden;
+      border-radius: 15px 15px 0 0;
+      margin: -25px -25px 20px -25px;
+    }
+    .package-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      image-rendering: -webkit-optimize-contrast;
+    }
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 10px;
+      margin: 15px 0;
+      text-align: center;
+    }
+    .package-features {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0;
+    }
+    .package-features li {
+      padding: 8px 0;
+      border-bottom: 1px solid #e8eef4;
+      color: #5a6c7d;
+    }
+    .package-features li:last-child {
+      border-bottom: none;
+    }
+.package-btn {
+      width: 100%;
+      margin-top: auto;
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 200px;
+    }
+    @media (max-width: 600px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الحجز - Loving Homes</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Tahoma, sans-serif; background: #f5f7fa; color: #2c3e50; }
+    .top-bar { background: #d4a84b; padding: 15px; display: flex; justify-content: center; align-items: center; flex-direction: column; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: relative; }
+    .top-controls { position: absolute; top: 10px; left: 10px; display: flex; gap: 5px; }
+    .logo { font-size: 20px; color: #ffffff; font-weight: bold; margin-bottom: 10px; }
+    .links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .links a { color: #5a6c7d; text-decoration: none; padding: 8px 12px; background: #e8eef4; border-radius: 20px; border: 1px solid #d4dde6; font-size: 14px; }
+    .font-btn { padding: 5px 10px; background: #ffffff; color: #d4a84b; border: none; border-radius: 10px; cursor: pointer; font-size: 12px; font-weight: bold; }
+    .font-btn:hover { background: #f0f0f0; }
+    .lang-btn { padding: 5px 10px; background: #ffffff; color: #d4a84b; border: none; border-radius: 10px; cursor: pointer; font-size: 12px; font-weight: bold; }
+    .lang-btn:hover { background: #f0f0f0; }
+    .menu-btn { display: none; padding: 8px 15px; background: #ffffff; color: #d4a84b; border: none; border-radius: 10px; cursor: pointer; font-size: 16px; font-weight: bold; }
+    .mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #d4a84b; padding: 10px; flex-direction: column; gap: 10px; }
+    .mobile-menu a { color: #ffffff; text-decoration: none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 10px; text-align: center; }
+    .container { max-width: 600px; margin: 40px auto; padding: 20px; background: #ffffff; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    h1 { text-align: center; color: #d4a84b; }
+    p { text-align: center; color: #7f8c8d; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; margin-bottom: 5px; color: #5a6c7d; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #d4dde6; background: #f5f7fa; color: #2c3e50; box-sizing: border-box; font-size: 16px; }
+    .submit-btn { width: 100%; padding: 15px; background: #f4a51c; color: white; border: none; border-radius: 30px; font-size: 18px; font-weight: bold; cursor: pointer; }
+    .nav-buttons { display: flex; justify-content: space-between; margin-top: 30px; }
+    .nav-buttons a { padding: 15px 30px; background: #e8eef4; color: #5a6c7d; text-decoration: none; border-radius: 30px; border: 1px solid #d4dde6; }
+    @media (max-width: 600px) { 
+      .links { display: none; } 
+      .menu-btn { display: block; }
+      .mobile-menu.active { display: flex; }
+      .top-bar { padding: 15px 10px; }
+      .top-controls { top: 5px; left: 5px; gap: 3px; }
+      .font-btn, .lang-btn { padding: 4px 8px; font-size: 11px; }
+      .logo { font-size: 18px; }
+      .container { margin: 20px 10px; padding: 15px; }
+      .nav-buttons { flex-direction: column; gap: 10px; } 
+      .nav-buttons a { text-align: center; }
+      .submit-btn { padding: 12px 20px; font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="top-controls">
+      <button class="lang-btn" onclick="arabic()">العربية</button>
+      <button class="lang-btn" onclick="english()">English</button>
+      <button class="font-btn" onclick="increaseFont()">+</button>
+      <button class="font-btn" onclick="decreaseFont()">-</button>
+    </div>
+    <div class="logo">Loving Homes</div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="pag2.html">الخدمات</a>
+      <a href="pag3.html">الصور</a>
+      <a href="pag4.html">الحجز</a>
+      <a href="pag5.html">من نحن</a>
+      <a href="pag6.html">التواصل</a>
+    </div>
+    <div class="links">
+      <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="pag2.html">الخدمات</a>
+      <a href="pag3.html">الصور</a>
+      <a href="pag4.html" class="active">الحجز</a>
+      <a href="pag5.html">من نحن</a>
+      <a href="pag6.html">التواصل</a>
+    </div>
+  </div>
+  <div class="container" id="main-content">
+    <h1 id="title">احجز الآن</h1>
+    <p id="desc">عبي النموذج التالي لحجز موعد لكلبك</p>
+    <form>
+      <div class="form-group">
+        <label id="label1">اسم صاحب الكلب</label>
+        <input type="text" required>
+      </div>
+      <div class="form-group">
+        <label id="label2">اسم الكلب</label>
+        <input type="text" required>
+      </div>
+      <div class="form-group">
+        <label id="label3">نوع الكلب</label>
+        <input type="text">
+      </div>
+      <div class="form-group">
+        <label id="label4">تاريخ الحجز</label>
+        <input type="date" required>
+      </div>
+      <div class="form-group">
+        <label id="label5">عدد الايام</label>
+        <input type="number" min="1" value="1" required>
+      </div>
+      <div class="form-group">
+        <label id="label6">ملاحظات</label>
+        <textarea rows="4"></textarea>
+      </div>
+      <button type="submit" class="submit-btn" id="submit-btn">تاكيد الحجز</button>
+    </form>
+    <div class="nav-buttons">
+      <a href="pag3.html" id="back">رجوع</a>
+      <a href="pag5.html" id="next">التالي</a>
+    </div>
+  </div>
+  <script>
+    let size = 16;
+
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("active");
+    }
+
+    function increaseFont() {
+      size += 2;
+      document.getElementById("main-content").style.fontSize = size + "px";
+    }
+
+    function decreaseFont() {
+      if (size > 10) {
+        size -= 2;
+        document.getElementById("main-content").style.fontSize = size + "px";
+      }
+    }
+
+    function arabic(){
+      document.getElementById("title").innerHTML="احجز الآن";
+      document.getElementById("desc").innerHTML="عبي النموذج التالي لحجز موعد لكلبك";
+      document.getElementById("label1").innerHTML="اسم صاحب الكلب";
+      document.getElementById("label2").innerHTML="اسم الكلب";
+      document.getElementById("label3").innerHTML="نوع الكلب";
+      document.getElementById("label4").innerHTML="تاريخ الحجز";
+      document.getElementById("label5").innerHTML="عدد الايام";
+      document.getElementById("label6").innerHTML="ملاحظات";
+      document.getElementById("submit-btn").innerHTML="تاكيد الحجز";
+      document.getElementById("back").innerHTML="رجوع";
+      document.getElementById("next").innerHTML="التالي";
+      document.body.dir="rtl";
+    }
+
+    function english(){
+      document.getElementById("title").innerHTML="Book Now";
+      document.getElementById("desc").innerHTML="Fill out the form to book an appointment for your dog";
+      document.getElementById("label1").innerHTML="Owner's Name";
+      document.getElementById("label2").innerHTML="Dog's Name";
+      document.getElementById("label3").innerHTML="Dog Type";
+      document.getElementById("label4").innerHTML="Booking Date";
+      document.getElementById("label5").innerHTML="Number of Days";
+      document.getElementById("label6").innerHTML="Notes";
+      document.getElementById("submit-btn").innerHTML="Confirm Booking";
+      document.getElementById("back").innerHTML="Back";
+      document.getElementById("next").innerHTML="Next";
+      document.body.dir="ltr";
+    }
+  </script>
+</body>
+</html>
+
